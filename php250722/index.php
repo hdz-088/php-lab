@@ -59,9 +59,23 @@
       echo "<tr><td>$name</td><td>$salary</td><td>" . taxCount($salary, 0) . "</td></tr>";
     }
   }
+  // Total
+  echo "- We have " . count($emp) . " employees </br>";
+
+  // Search by Value
+  if (in_array(68000, $emp)){
+    echo "- Paresh's salary is 68000 </br>";
+  };
+
+  // Search by Key
+  if (array_key_exists("Sneha", $emp)){
+    echo "- Sneha is in the list";
+  };
 
   echo "<table>";
   echo "<tr> <th>Name</th> <th>Salary</th> <th>In Hand</th> </tr>";
+
+  arsort($emp);
 
   foreach($emp as $n => $s){
     grades($n, $s);
